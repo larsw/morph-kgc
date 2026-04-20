@@ -64,7 +64,7 @@ SQL_RDF_DATATYPE = {
 def _replace_query_enclosing_characters(sql_query, db_dialect):
     dialect_sql_query = ''
 
-    if db_dialect in [MYSQL, MARIADB]:
+    if db_dialect in [MYSQL, MARIADB, SPARK, SPARKSQL, HIVE]:
         dialect_sql_query = sql_query   # the query already uses backticks as enclosed characters
     elif db_dialect == MSSQL:
         # replace backticks with square brackets
